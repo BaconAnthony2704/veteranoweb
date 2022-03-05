@@ -1,0 +1,100 @@
+<div>
+  <p-button label="+" (onClick)="crearNuevo()"></p-button>
+    <p-table [value]="listaVeterano" selectionMode="single" [(selection)]="selectedVeterano" dataKey="dui">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th>
+            DUI
+          </th>
+          <th>
+            Carnet
+          </th>
+          <th>
+            Nombre
+          </th>
+          <th>
+            Nombre2
+          </th>
+          <th>
+            Apellido
+          </th>
+          <th>
+            Apellido2
+          </th>
+          <th>
+            Acciones
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData>
+        <tr>
+          <td pEditableColumn>
+
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                  <input pInputText type="text" [(ngModel)]="rowData.dui">
+              </ng-template>
+              <ng-template pTemplate="output">
+                  {{rowData.dui}}
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td pEditableColumn>
+
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                  <input pInputText type="text" [(ngModel)]="rowData.carnet">
+              </ng-template>
+              <ng-template pTemplate="output">
+                  {{rowData.carnet}}
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td pEditableColumn>
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                  <input pInputText type="text" [(ngModel)]="rowData.nombre">
+              </ng-template>
+              <ng-template pTemplate="output">
+                  {{rowData.nombre}}
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td pEditableColumn>
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                  <input pInputText type="text" [(ngModel)]="rowData.nombre2">
+              </ng-template>
+              <ng-template pTemplate="output">
+                  {{rowData.nombre2}}
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td pEditableColumn>
+            <p-cellEditor >
+              <ng-template pTemplate="input">
+                  <input pInputText type="text" [(ngModel)]="rowData.apellido">
+              </ng-template>
+              <ng-template pTemplate="output">
+                  {{rowData.apellido}}
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td pEditableColumn>
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                  <input pInputText type="text" [(ngModel)]="rowData.apellido2">
+              </ng-template>
+              <ng-template pTemplate="output">
+                  {{rowData.apellido2}}
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td>
+            <p-button label="Asociar beneficio" (onClick)="asociarBeneficios(rowData.id)" ></p-button>
+          </td>
+        </tr>
+      </ng-template>
+
+    </p-table>
+</div>
